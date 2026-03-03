@@ -1,0 +1,7 @@
+num_train: 5000
+num_test: 500
+delta: 1.5       # Parameter delta in the covariance operator C=(\delta I-\gamma\Delta)^{-2}
+gamma: 0.15      # Parameter gamma in the covariance operator C=(\delta I-\gamma\Delta)^{-2}
+mean: 0.0        # Parameter mean in the Gassian random field
+robin_bc: true   # Whether to impose Robin boundary condition
+seed: 0          # Seed of the random number generator

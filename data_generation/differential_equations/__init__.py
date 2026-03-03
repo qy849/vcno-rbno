@@ -1,0 +1,3 @@
+from .elasticity_least_squares import ElasticityLeastSquares
+from .poisson_setup1_least_squares import PoissonSetup1LeastSquares
+from .poisson_setup2_least_squares import PoissonSetup2LeastSquares

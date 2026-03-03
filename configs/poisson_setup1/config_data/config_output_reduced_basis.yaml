@@ -1,0 +1,4 @@
+num_evals: 500
+num_basis: 128
+# num_evals: 1000
+# num_basis: 500 

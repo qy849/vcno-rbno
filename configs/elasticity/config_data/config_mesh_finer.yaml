@@ -1,0 +1,7 @@
+lower_left_x: 0.0 # x coordinate of the lower left corner of the domain
+lower_left_y: 0.0 # y coordinate of the lower left corner of the domain
+upper_right_x: 2.0  # x coordinate of the upper right corner of the domain
+upper_right_y: 1.0  # y coordinate of the upper right corner of the domain
+num_x: 256  # Number of cells in the x-axis
+num_y: 128  # Number of cells in the y-axis
+mesh_cell_type: triangle  # Type of mesh cell (triangle or quadrilateral)

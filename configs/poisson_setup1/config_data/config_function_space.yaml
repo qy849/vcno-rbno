@@ -1,0 +1,15 @@
+p:
+  family: 'DG'             
+  degree: 0               
+u:
+  family: 'CG'             
+  degree: 2
+sigma: 
+  family: 'RT'             
+  degree: 2
+w: 
+  family: 'CG'             
+  degree: 2
+q:
+  family: 'CG'             
+  degree: 2
