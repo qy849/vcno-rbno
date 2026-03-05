@@ -1,10 +1,10 @@
 # vcno-rbno
 
-Code and data workflow for reproducing experiments from  
-[Variationally correct operator learning: Reduced basis neural operator with a posteriori error estimation](https://arxiv.org/abs/2512.21319), on:
-- `poisson_setup1` (Heat Conduction)
-- `poisson_setup2` (Darcy Flow)
-- `elasticity` (Linear Elasticity)
+Code for the paper
+[Variationally correct operator learning: Reduced basis neural operator with a posteriori error estimation](https://arxiv.org/abs/2512.21319). 
+
+This work develops a variationally correct operator learning framework by constructing first-order system least-squares (FOSLS) objectives whose values are provably equivalent to the solution error in PDE-induced norms. We demonstrate this framework on stationary diffusion and linear elasticity, incorporating mixed Dirichlet-Neumann boundary conditions via variational lifts to preserve norm equivalence without inconsistent penalties. To ensure the function space conformity required by the FOSLS loss, we propose a Reduced Basis Neural Operator (RBNO). The RBNO predicts coefficients for a pre-computed, conforming reduced basis, thereby ensuring variational stability by design while enabling efficient training.
+
 
 ## Repository layout
 
@@ -44,6 +44,12 @@ Reference software versions used in the paper runs:
 
 
 ## Data setup and generation
+
+We consider the following problems:
+- `poisson_setup1` (Heat Conduction)
+- `poisson_setup2` (Darcy Flow)
+- `elasticity` (Linear Elasticity)
+
 
 From repository root:
 
