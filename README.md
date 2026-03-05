@@ -3,9 +3,8 @@
 Code for the paper
 [Variationally correct operator learning: Reduced basis neural operator with a posteriori error estimation](https://arxiv.org/abs/2512.21319). 
 
-This work develops a variationally correct operator learning framework by constructing first-order system least-squares (FOSLS) objectives whose values are provably equivalent to the solution error in PDE-induced norms. We demonstrate this framework on stationary diffusion and linear elasticity, incorporating mixed Dirichlet-Neumann boundary conditions via variational lifts to preserve norm equivalence without inconsistent penalties. To ensure the function space conformity required by the FOSLS loss, we propose a Reduced Basis Neural Operator (RBNO). The RBNO predicts coefficients for a pre-computed, conforming reduced basis, thereby ensuring variational stability by design while enabling efficient training.
-
-
+This work develops a variationally correct operator learning framework by constructing first-order system least-squares (FOSLS) objectives whose values are provably equivalent to the solution error in PDE-compliant norms. We demonstrate this framework on stationary diffusion and linear elasticity, incorporating mixed Dirichlet-Neumann boundary conditions via variational lifts to preserve norm equivalence without inconsistent penalties. To ensure the function space conformity required by the FOSLS loss, we propose a Reduced Basis Neural Operator (RBNO). The RBNO predicts coefficients for a pre-computed, conforming reduced basis, thereby ensuring variational stability by design while enabling efficient training.
+ 
 ## Repository layout
 
 - `configs/`: YAML configuration files for meshes, function spaces, and reduced-basis settings.
@@ -36,7 +35,7 @@ echo 'export OMP_NUM_THREADS=1' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Reference software versions used in the paper runs:
+Packages and their versions used in the paper runs:
 - Python `3.13`
 - DOLFINx `0.9.0`
 - scifem `0.7.0`
