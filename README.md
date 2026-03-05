@@ -43,15 +43,15 @@ Reference software versions used in the paper runs:
 - PyTorch `2.6.0+cu124`
 
 
-## Data setup and generation
+## Problem setups and data generation
 
-We consider the following problems:
+We consider the following problem setups:
 - `poisson_setup1` (Heat Conduction)
 - `poisson_setup2` (Darcy Flow)
 - `elasticity` (Linear Elasticity)
 
 
-From repository root:
+Data generation: create directories for saving results
 
 ```bash
 cd /path/to/vcno-rbno
@@ -73,7 +73,7 @@ bash scripts/poisson_least_squares_setup2_data_generation.sh
 bash scripts/elasticity_least_squares_data_generation.sh
 ```
 
-Note: generation scripts currently use `mpirun -n 50`; adjust to your available resources.
+The data-generation scripts launch 50 MPI ranks by default (`mpirun -n 50`). Reduce or increase `-n` to match your available CPU cores.
 
 ## Analysis
 
