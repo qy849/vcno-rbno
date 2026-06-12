@@ -15,6 +15,7 @@ This work develops a variationally correct operator learning framework by constr
 - `analysis/`: analysis notebooks and saved figures.
 - `train/`: training and evaluation notebooks.
 - `utils/`: shared IO, plotting, MPI, and helper utilities.
+- `FC_PINO/`: Fourier-Continuation Physics-Informed Neural Operator (FC-PINO) baseline used for comparison against the RBNO, including training scripts, prediction/residual visualization notebooks, and FC-Gram matrix construction.
 
 ## Environment setup
 
@@ -94,6 +95,7 @@ Models covered:
 - Reduced Basis Neural Operator (RBNO)
 - Fourier Neural Operator (FNO)
 - Principal Component Analysis Network (PCA-Net)
+- Fourier-Continuation Physics-Informed Neural Operator (FC-PINO) — comparison baseline, see `FC_PINO/`
 
 Notebook naming patterns:
 - RBNO, physics (FOSLS) loss only: `*_rbno_physics_loss.ipynb`
@@ -102,6 +104,18 @@ Notebook naming patterns:
 - FNO: `*_fno.ipynb`
 - PCA-Net (basis computed from grid-point evaluations): `*_pcanet.ipynb`
 - PCA-Net (basis computed from degrees of freedom): `*_pcanet_new_basis.ipynb`
+
+### FC-PINO comparison
+
+As an additional baseline we compare the RBNO against the Fourier-Continuation Physics-Informed Neural Operator (FC-PINO) [**Ganeshram, A., Maust, H., Duruisseaux, V., Li, Z., Wang, Y., Leibovici, D., Bruno, O., Hou, T., & Anandkumar, A.** (2025), *FC-PINO: High Precision Physics-Informed Neural Operators via Fourier Continuation*, arXiv preprint [arXiv:2211.15960](https://doi.org/10.48550/arXiv.2211.15960)], which applies Fourier continuation so that spectral differentiation of the physics-informed loss remains accurate for the non-periodic problems considered here. The FC residual is evaluated pointwise with the FC-PINO derivative API, while the comparison residual and PDE-compliant norms are assembled from projected finite-element DoFs as in the corresponding FNO notebooks. Scripts and notebooks live in `FC_PINO/`, organized per problem setup (`poisson_setup1`, `poisson_setup2`, `elasticity`):
+
+- FC-PINO, supervised data loss: `*_fc_pino_data.py`
+- FC-PINO, two-stage training (stage 1 data loss, stage 2 combined FC physics + data loss): `*_fc_pino_two_stage_data_physics.py`
+- FC-PINO prediction/residual visualization: `*_fc_pino_prediction_residual_visualization.ipynb`
+- RBNO prediction/residual visualization (for side-by-side comparison): `*_rbno_prediction_residual_visualization.ipynb`
+
+Shared FC-PINO components are `FC_PINO/fc_fno.py` (FC-FNO architecture), `FC_PINO/utils.py`, and `FC_PINO/FC_Gram_Construction/` (FC-Gram matrix construction).
+
 
 ## Citation
 
@@ -115,3 +129,4 @@ If this repository is useful in your research, please cite:
   year={2025}
 }
 ```
+
